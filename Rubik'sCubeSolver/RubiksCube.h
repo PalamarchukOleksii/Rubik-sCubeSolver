@@ -1,9 +1,12 @@
 #pragma once
 
 struct PositionOfCube {
-	int frontSide;
 	int upSide;
+	int leftSide;
+	int frontSide;
 	int rightSide;
+	int backSide;
+	int downSide;
 };
 
 class RubiksCube
@@ -15,12 +18,14 @@ private:
 	int stickersCount = 54;
 	int*** cube;
 	char* inputeCube;
-	PositionOfCube pos{ 2,0,3 };
+	PositionOfCube sidePosition{ 0,1,2,3,4,5 };
 public:
 	RubiksCube(char* inputeCube);
 	~RubiksCube();
 	void SetInputeCube(char* inputeCube);
 	void PrintCube() const;
-	void RightClockWise();
+	void TurnSide(char side, int turnsAmount);
+	int FaceIdentification(char side) const;
+	int* NeighborSides(char side) const;
 };
 
