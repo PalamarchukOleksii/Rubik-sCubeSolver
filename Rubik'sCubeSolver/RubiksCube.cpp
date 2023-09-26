@@ -43,8 +43,8 @@ void RubiksCube::turnStickersTwoTimes(int side)
 	int temp;
 	for (int i = 0;i < 5;i++) {
 		temp = cube[side * 9 + i];
-		cube[side * 9 + +i] = cube[side * 9 + 8-i];
-		cube[side * 9 +8- i] = temp;
+		cube[side * 9 + +i] = cube[side * 9 + 8 - i];
+		cube[side * 9 + 8 - i] = temp;
 	}
 }
 
@@ -96,7 +96,7 @@ void RubiksCube::printCube() const
 					coord.Y = j + cubeSize;
 				}
 				SetConsoleCursorPosition(stdOutPutHandle, coord);
-				SetConsoleTextAttribute(stdOutPutHandle, colors[cube[i*9+j*3+k]]);
+				SetConsoleTextAttribute(stdOutPutHandle, colors[cube[i * 9 + j * 3 + k]]);
 				std::cout << char(219) << char(219);
 			}
 		}
@@ -185,7 +185,7 @@ void RubiksCube::turnUpClockWise()
 {
 	turnStickersClockWise(0);
 
-	int tempFront[3], tempBack[3], tempLeft[3], tempRight[3];
+	int tempFront[3]{}, tempBack[3]{}, tempLeft[3]{}, tempRight[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempFront[i] = cube[2 * sideStickersCount + i];
@@ -206,7 +206,7 @@ void RubiksCube::turnUpCounterClockWise()
 {
 	turnStickersCounterClockWise(0);
 
-	int tempFront[3], tempBack[3], tempLeft[3], tempRight[3];
+	int tempFront[3]{}, tempBack[3]{}, tempLeft[3]{}, tempRight[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempFront[i] = cube[2 * sideStickersCount + i];
@@ -227,7 +227,7 @@ void RubiksCube::turnUpTwoTimes()
 {
 	turnStickersTwoTimes(0);
 
-	int tempFront[3], tempBack[3], tempLeft[3], tempRight[3];
+	int tempFront[3]{}, tempBack[3]{}, tempLeft[3]{}, tempRight[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempFront[i] = cube[2 * sideStickersCount + i];
@@ -248,20 +248,20 @@ void RubiksCube::turnDownClockWise()
 {
 	turnStickersClockWise(5);
 
-	int tempFront[3], tempBack[3], tempLeft[3], tempRight[3];
+	int tempFront[3]{}, tempBack[3]{}, tempLeft[3]{}, tempRight[3]{};
 
 	for (int i = 0; i < 3; i++) {
-		tempFront[i] = cube[2 * sideStickersCount + i+6];
-		tempBack[i] = cube[4 * sideStickersCount + i+6];
-		tempLeft[i] = cube[1 * sideStickersCount + i+6];
-		tempRight[i] = cube[3 * sideStickersCount + i+6];
+		tempFront[i] = cube[2 * sideStickersCount + i + 6];
+		tempBack[i] = cube[4 * sideStickersCount + i + 6];
+		tempLeft[i] = cube[1 * sideStickersCount + i + 6];
+		tempRight[i] = cube[3 * sideStickersCount + i + 6];
 	}
 
 	for (int i = 0; i < 3; i++) {
-		cube[2 * sideStickersCount + i+6] = tempLeft[i];
-		cube[4 * sideStickersCount + i+6] = tempRight[i];
-		cube[1 * sideStickersCount + i+6] = tempBack[i];
-		cube[3 * sideStickersCount + i+6] = tempFront[i];
+		cube[2 * sideStickersCount + i + 6] = tempLeft[i];
+		cube[4 * sideStickersCount + i + 6] = tempRight[i];
+		cube[1 * sideStickersCount + i + 6] = tempBack[i];
+		cube[3 * sideStickersCount + i + 6] = tempFront[i];
 	}
 }
 
@@ -269,20 +269,20 @@ void RubiksCube::turnDownCounterClockWise()
 {
 	turnStickersCounterClockWise(5);
 
-	int tempFront[3], tempBack[3], tempLeft[3], tempRight[3];
+	int tempFront[3]{}, tempBack[3]{}, tempLeft[3]{}, tempRight[3]{};
 
 	for (int i = 0; i < 3; i++) {
-		tempFront[i] = cube[2 * sideStickersCount + i+6];
-		tempBack[i] = cube[4 * sideStickersCount + i+6];
-		tempLeft[i] = cube[1 * sideStickersCount + i+6];
-		tempRight[i] = cube[3 * sideStickersCount + i+6];
+		tempFront[i] = cube[2 * sideStickersCount + i + 6];
+		tempBack[i] = cube[4 * sideStickersCount + i + 6];
+		tempLeft[i] = cube[1 * sideStickersCount + i + 6];
+		tempRight[i] = cube[3 * sideStickersCount + i + 6];
 	}
 
 	for (int i = 0; i < 3; i++) {
-		cube[2 * sideStickersCount + i+6] = tempRight[i];
-		cube[4 * sideStickersCount + i+6] = tempLeft[i];
-		cube[1 * sideStickersCount + i+6] = tempFront[i];
-		cube[3 * sideStickersCount + i+6] = tempBack[i];
+		cube[2 * sideStickersCount + i + 6] = tempRight[i];
+		cube[4 * sideStickersCount + i + 6] = tempLeft[i];
+		cube[1 * sideStickersCount + i + 6] = tempFront[i];
+		cube[3 * sideStickersCount + i + 6] = tempBack[i];
 	}
 }
 
@@ -290,20 +290,20 @@ void RubiksCube::turnDownTwoTimes()
 {
 	turnStickersTwoTimes(5);
 
-	int tempFront[3], tempBack[3], tempLeft[3], tempRight[3];
+	int tempFront[3]{}, tempBack[3]{}, tempLeft[3]{}, tempRight[3]{};
 
 	for (int i = 0; i < 3; i++) {
-		tempFront[i] = cube[2 * sideStickersCount + i+6];
-		tempBack[i] = cube[4 * sideStickersCount + i+6];
-		tempLeft[i] = cube[1 * sideStickersCount + i+6];
-		tempRight[i] = cube[3 * sideStickersCount + i+6];
+		tempFront[i] = cube[2 * sideStickersCount + i + 6];
+		tempBack[i] = cube[4 * sideStickersCount + i + 6];
+		tempLeft[i] = cube[1 * sideStickersCount + i + 6];
+		tempRight[i] = cube[3 * sideStickersCount + i + 6];
 	}
 
 	for (int i = 0; i < 3; i++) {
-		cube[2 * sideStickersCount + i+6] = tempBack[i];
-		cube[4 * sideStickersCount + i+6] = tempFront[i];
-		cube[1 * sideStickersCount + i+6] = tempRight[i];
-		cube[3 * sideStickersCount + i+6] = tempLeft[i];
+		cube[2 * sideStickersCount + i + 6] = tempBack[i];
+		cube[4 * sideStickersCount + i + 6] = tempFront[i];
+		cube[1 * sideStickersCount + i + 6] = tempRight[i];
+		cube[3 * sideStickersCount + i + 6] = tempLeft[i];
 	}
 }
 
@@ -311,20 +311,20 @@ void RubiksCube::turnLeftClockWise()
 {
 	turnStickersClockWise(1);
 
-	int tempFront[3], tempBack[3], tempUp[3], tempDown[3];
+	int tempFront[3]{}, tempBack[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
-		tempFront[i] = cube[2 * sideStickersCount + i *3];
-		tempBack[i] = cube[4 * sideStickersCount + 8-(i*3)];
-		tempUp[i] = cube[0 * sideStickersCount + i *3];
-		tempDown[i] = cube[5 * sideStickersCount + i *3];
+		tempFront[i] = cube[2 * sideStickersCount + i * 3];
+		tempBack[i] = cube[4 * sideStickersCount + 8 - (i * 3)];
+		tempUp[i] = cube[0 * sideStickersCount + i * 3];
+		tempDown[i] = cube[5 * sideStickersCount + i * 3];
 	}
 
 	for (int i = 0; i < 3; i++) {
-		cube[2 * sideStickersCount + i *3] = tempUp[i];
-		cube[4 * sideStickersCount + 8-(i*3)] = tempDown[i];
+		cube[2 * sideStickersCount + i * 3] = tempUp[i];
+		cube[4 * sideStickersCount + 8 - (i * 3)] = tempDown[i];
 		cube[0 * sideStickersCount + i * 3] = tempBack[i];
-		cube[5 * sideStickersCount + i *3] = tempFront[i];
+		cube[5 * sideStickersCount + i * 3] = tempFront[i];
 	}
 }
 
@@ -332,7 +332,7 @@ void RubiksCube::turnLeftCounterClockWise()
 {
 	turnStickersCounterClockWise(1);
 
-	int tempFront[3], tempBack[3], tempUp[3], tempDown[3];
+	int tempFront[3]{}, tempBack[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempFront[i] = cube[2 * sideStickersCount + i * 3];
@@ -353,7 +353,7 @@ void RubiksCube::turnLeftTwoTimes()
 {
 	turnStickersTwoTimes(1);
 
-	int tempFront[3], tempBack[3], tempUp[3], tempDown[3];
+	int tempFront[3]{}, tempBack[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempFront[i] = cube[2 * sideStickersCount + i * 3];
@@ -374,20 +374,20 @@ void RubiksCube::turnRightClockWise()
 {
 	turnStickersClockWise(3);
 
-	int tempFront[3], tempBack[3], tempUp[3], tempDown[3];
+	int tempFront[3]{}, tempBack[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
-		tempFront[i] = cube[2 * sideStickersCount + i * 3+2];
+		tempFront[i] = cube[2 * sideStickersCount + i * 3 + 2];
 		tempBack[i] = cube[4 * sideStickersCount + 6 - (i * 3)];
-		tempUp[i] = cube[0 * sideStickersCount + i * 3+2];
-		tempDown[i] = cube[5 * sideStickersCount + i * 3+2];
+		tempUp[i] = cube[0 * sideStickersCount + i * 3 + 2];
+		tempDown[i] = cube[5 * sideStickersCount + i * 3 + 2];
 	}
 
 	for (int i = 0; i < 3; i++) {
-		cube[2 * sideStickersCount + i * 3+2] = tempDown[i];
+		cube[2 * sideStickersCount + i * 3 + 2] = tempDown[i];
 		cube[4 * sideStickersCount + 6 - (i * 3)] = tempUp[i];
-		cube[0 * sideStickersCount + i * 3+2] = tempFront[i];
-		cube[5 * sideStickersCount + i * 3+2] = tempBack[i];
+		cube[0 * sideStickersCount + i * 3 + 2] = tempFront[i];
+		cube[5 * sideStickersCount + i * 3 + 2] = tempBack[i];
 	}
 }
 
@@ -395,7 +395,7 @@ void RubiksCube::turnRightCounterClockWise()
 {
 	turnStickersCounterClockWise(3);
 
-	int tempFront[3], tempBack[3], tempUp[3], tempDown[3];
+	int tempFront[3]{}, tempBack[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempFront[i] = cube[2 * sideStickersCount + i * 3 + 2];
@@ -416,7 +416,7 @@ void RubiksCube::turnRightTwoTimes()
 {
 	turnStickersTwoTimes(3);
 
-	int tempFront[3], tempBack[3], tempUp[3], tempDown[3];
+	int tempFront[3]{}, tempBack[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempFront[i] = cube[2 * sideStickersCount + i * 3 + 2];
@@ -437,20 +437,20 @@ void RubiksCube::turnFrontClockWise()
 {
 	turnStickersClockWise(2);
 
-	int tempRight[3], tempLeft[3], tempUp[3], tempDown[3];
+	int tempRight[3]{}, tempLeft[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
-		tempLeft[i] = cube[1 * sideStickersCount + 8-(i*3)];
-		tempRight[i] = cube[3 * sideStickersCount +  i * 3];
-		tempUp[i] = cube[0 * sideStickersCount + i +6];
-		tempDown[i] = cube[5 * sideStickersCount + 2-i];
+		tempLeft[i] = cube[1 * sideStickersCount + 8 - (i * 3)];
+		tempRight[i] = cube[3 * sideStickersCount + i * 3];
+		tempUp[i] = cube[0 * sideStickersCount + i + 6];
+		tempDown[i] = cube[5 * sideStickersCount + 2 - i];
 	}
 
 	for (int i = 0; i < 3; i++) {
-		cube[1 * sideStickersCount + 8-(i*3)] = tempDown[i];
-		cube[3 * sideStickersCount +  i * 3] = tempUp[i];
-		cube[0 * sideStickersCount + i +6] = tempLeft[i];
-		cube[5 * sideStickersCount + 2-i] = tempRight[i];
+		cube[1 * sideStickersCount + 8 - (i * 3)] = tempDown[i];
+		cube[3 * sideStickersCount + i * 3] = tempUp[i];
+		cube[0 * sideStickersCount + i + 6] = tempLeft[i];
+		cube[5 * sideStickersCount + 2 - i] = tempRight[i];
 	}
 }
 
@@ -458,7 +458,7 @@ void RubiksCube::turnFrontCounterClockWise()
 {
 	turnStickersCounterClockWise(2);
 
-	int tempRight[3], tempLeft[3], tempUp[3], tempDown[3];
+	int tempRight[3]{}, tempLeft[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempLeft[i] = cube[1 * sideStickersCount + 8 - (i * 3)];
@@ -479,7 +479,7 @@ void RubiksCube::turnFrontTwoTimes()
 {
 	turnStickersTwoTimes(2);
 
-	int tempRight[3], tempLeft[3], tempUp[3], tempDown[3];
+	int tempRight[3]{}, tempLeft[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempLeft[i] = cube[1 * sideStickersCount + 8 - (i * 3)];
@@ -500,20 +500,20 @@ void RubiksCube::turnBackClockWise()
 {
 	turnStickersClockWise(4);
 
-	int tempRight[3], tempLeft[3], tempUp[3], tempDown[3];
+	int tempRight[3]{}, tempLeft[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempLeft[i] = cube[1 * sideStickersCount + i * 3];
-		tempRight[i] = cube[3 * sideStickersCount +8-( i * 3)];
-		tempUp[i] = cube[0 * sideStickersCount + 2-i];
-		tempDown[i] = cube[5 * sideStickersCount + i+6];
+		tempRight[i] = cube[3 * sideStickersCount + 8 - (i * 3)];
+		tempUp[i] = cube[0 * sideStickersCount + 2 - i];
+		tempDown[i] = cube[5 * sideStickersCount + i + 6];
 	}
 
 	for (int i = 0; i < 3; i++) {
 		cube[1 * sideStickersCount + i * 3] = tempUp[i];
-		cube[3 * sideStickersCount +8-( i * 3)] = tempDown[i];
-		cube[0 * sideStickersCount + 2-i] = tempRight[i];
-		cube[5 * sideStickersCount + i+6] = tempLeft[i];
+		cube[3 * sideStickersCount + 8 - (i * 3)] = tempDown[i];
+		cube[0 * sideStickersCount + 2 - i] = tempRight[i];
+		cube[5 * sideStickersCount + i + 6] = tempLeft[i];
 	}
 }
 
@@ -521,7 +521,7 @@ void RubiksCube::turnBackCounterClockWise()
 {
 	turnStickersCounterClockWise(4);
 
-	int tempRight[3], tempLeft[3], tempUp[3], tempDown[3];
+	int tempRight[3]{}, tempLeft[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempLeft[i] = cube[1 * sideStickersCount + i * 3];
@@ -542,7 +542,7 @@ void RubiksCube::turnBackTwoTimes()
 {
 	turnStickersTwoTimes(4);
 
-	int tempRight[3], tempLeft[3], tempUp[3], tempDown[3];
+	int tempRight[3]{}, tempLeft[3]{}, tempUp[3]{}, tempDown[3]{};
 
 	for (int i = 0; i < 3; i++) {
 		tempLeft[i] = cube[1 * sideStickersCount + i * 3];
